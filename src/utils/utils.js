@@ -11,10 +11,12 @@ function resultadoParcial(name, description, image, creators) {
 function nftInfo(lote) {
     let lista = [];
     for (let k of lote) {
-        const name = k.name;
-        const description = k.description;
-        const image = k.image;
-        const creators = k.creators;
+
+        const data = k.token.metadata
+        const name = data.name;
+        const description = data.description;
+        const image = data.image;
+        const creators = data.creators;
         const obj = resultadoParcial(name, description, image, creators);
         lista.push(obj);
     }
