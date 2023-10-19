@@ -78,9 +78,9 @@ async function getAllSells(address) {
     
         for (let i = 0; i < response.data.length; i += step) {
             const lote = response.data.slice(i, i + step);
-            const nftInfo = nftInfo(lote);
+            const info = nftInfo(lote);
 
-            lista.push(...nftInfo)
+            lista.push(...info)
         }
         return lista;
     } catch (e) {

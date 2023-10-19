@@ -1,4 +1,4 @@
-function resultadoParcial(name, description, image, creators = "") {
+function resultadoParcial(name, description, image, creators) {
     const obj = {
         name: name,
         description: description,
@@ -14,8 +14,8 @@ function nftInfo(lote) {
         const name = k.name;
         const description = k.description;
         const image = k.image;
-        
-        obj = resultadoParcial(name, description, image);
+        const creators = k.creators;
+        const obj = resultadoParcial(name, description, image, creators);
         lista.push(obj);
     }
     return lista;
